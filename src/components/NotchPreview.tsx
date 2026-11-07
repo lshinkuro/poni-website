@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import {
   BatteryMedium, Braces, Clock, ClipboardList, Copy, Cpu, Flame, GitBranch, Gauge, HardDrive, Image as ImageIcon, Inbox, MemoryStick,
   Music, Pause, Pin, Plus, Radio, RotateCcw, Search, SkipBack, SkipForward, Sparkles, SquarePen, StickyNote, Timer, Trash2, Upload,
-  ArrowDown, FileText, FileArchive, X, Hash, ClipboardPaste, AlignLeft, ArrowUpCircle, Target, Hand, LayoutGrid, BatteryCharging, MicOff, Camera, Pipette, Coffee, ArrowDownCircle, HardDriveDownload, CalendarDays, Video, Bell,
+  ArrowDown, FileText, FileArchive, X, Hash, ClipboardPaste, AlignLeft, ArrowUpCircle, Target, Hand, LayoutGrid, BatteryCharging, MicOff, Camera, Pipette, Coffee, ArrowDownCircle, HardDriveDownload, CalendarDays, Video, Bell, BookOpen,
 } from 'lucide-react'
 import { NButton, NCard, Ring, Scaled } from './mock'
 import { P, grad, theme, type Icon, type Theme } from './theme'
@@ -311,6 +311,7 @@ function MoreTab() {
     [Coffee, 'Tetap menyala', '30 menit, 1 jam, atau sampai jam tertentu', P.amber],
     [ArrowDownCircle, 'Download', 'Kabari saat download selesai', P.blue],
     [HardDriveDownload, 'Eject USB', 'Lepas flashdisk dengan aman', P.indigo],
+    [BookOpen, 'Belajar Bahasa', 'Inggris & Spanyol, TOEFL, ngobrol pakai suara', P.teal],
   ]
   return (
     <div className="grid grid-cols-4 gap-2.5">

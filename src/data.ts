@@ -31,13 +31,13 @@ export const notch = [
   { icon: Timer, title: 'Fokus', desc: 'Pomodoro 25/50/90 menit atau atur sendiri, niat sesi, blokir aplikasi pengganggu, jurnal setelah sesi, otomatis jeda saat rapat. ⌃⌥S dari mana saja.' },
   { icon: CalendarDays, title: 'Rapat', desc: 'Kalender bulanan: tambah dan edit rapat, atur pengingat per acara. Tersimpan ke Kalender macOS, notifikasi tetap muncul walau aplikasi ditutup. ⌃⌥R.' },
   { icon: Bot, title: 'AI', desc: 'Chat dengan CLI AI yang terpasang (Claude Code, Kiro), plus halaman Pemakaian: berapa token AI yang kamu pakai hari ini dan 7 hari terakhir.' },
-  { icon: NotebookPen, title: 'Catatan', desc: 'Quick notes multi-halaman, tersimpan otomatis, rapikan dengan AI.' },
+  { icon: NotebookPen, title: 'Catatan', desc: 'Quick notes multi-halaman yang tersinkron ke Apple Notes, jadi muncul juga di iPhone. Bisa dirapikan dengan AI.' },
   { icon: Code2, title: 'Dev Utils', desc: 'JSON, JWT, Base64, URL, timestamp, SHA-256/MD5, UUID. Semua offline.' },
   { icon: Clipboard, title: 'Clipboard', desc: 'Riwayat copy, pin, OCR teks dari gambar. Isi password manager diabaikan.' },
   { icon: FolderUp, title: 'Shelf', desc: 'Seret file ke notch, seret keluar, atau kirim lewat AirDrop.' },
   { icon: GitBranch, title: 'Git', desc: 'Status repo, pull/push, commit dengan pesan AI, review PR GitHub & Bitbucket.' },
   { icon: Cpu, title: 'Stats', desc: 'Baterai, CPU, memori, dan disk sekilas pandang.' },
-  { icon: LayoutGrid, title: 'Lainnya', desc: 'Notif saat baterai penuh, Mic Mute untuk semua aplikasi (⌃⌥M), kamera cermin, color picker, tetap menyala dengan durasi, notif download, dan eject USB.' },
+  { icon: LayoutGrid, title: 'Lainnya', desc: 'Notif saat baterai penuh, Mic Mute untuk semua aplikasi (⌃⌥M), kamera cermin, color picker, tetap menyala dengan durasi, notif download, eject USB, dan Belajar Bahasa (Inggris & Spanyol, soal TOEFL, ngobrol pakai suara dengan Apple Intelligence atau Claude).' },
 ]
 
 export const menubar = [
