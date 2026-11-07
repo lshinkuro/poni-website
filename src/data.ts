@@ -1,5 +1,5 @@
 import {
-  BatteryCharging, BatteryFull, LayoutGrid, Bot, Clipboard, Code2, Cpu, FolderUp, GitBranch, Gauge, Moon, Music,
+  BatteryCharging, BatteryFull, LayoutGrid, CalendarDays, Bot, Clipboard, Code2, Cpu, FolderUp, GitBranch, Gauge, Moon, Music,
   NotebookPen, Sailboat, ShieldCheck, Sparkles, Thermometer, Timer, Trash2, Wrench, Zap,
 } from 'lucide-react'
 
@@ -29,6 +29,7 @@ export const battery = [
 export const notch = [
   { icon: Music, title: 'Musik', desc: 'Spotify / Apple Music dengan album art, kontrol, dan lirik berjalan.' },
   { icon: Timer, title: 'Fokus', desc: 'Pomodoro 25/50/90 menit atau atur sendiri, niat sesi, blokir aplikasi pengganggu, jurnal setelah sesi, otomatis jeda saat rapat. ⌃⌥S dari mana saja.' },
+  { icon: CalendarDays, title: 'Rapat', desc: 'Kalender bulanan: tambah dan edit rapat, atur pengingat per acara. Tersimpan ke Kalender macOS, notifikasi tetap muncul walau aplikasi ditutup. ⌃⌥R.' },
   { icon: Bot, title: 'AI', desc: 'Chat dengan CLI AI yang terpasang (Claude Code, Kiro), plus halaman Pemakaian: berapa token AI yang kamu pakai hari ini dan 7 hari terakhir.' },
   { icon: NotebookPen, title: 'Catatan', desc: 'Quick notes multi-halaman, tersimpan otomatis, rapikan dengan AI.' },
   { icon: Code2, title: 'Dev Utils', desc: 'JSON, JWT, Base64, URL, timestamp, SHA-256/MD5, UUID. Semua offline.' },

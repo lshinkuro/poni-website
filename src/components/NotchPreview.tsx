@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import {
   BatteryMedium, Braces, Clock, ClipboardList, Copy, Cpu, Flame, GitBranch, Gauge, HardDrive, Image as ImageIcon, Inbox, MemoryStick,
   Music, Pause, Pin, Plus, Radio, RotateCcw, Search, SkipBack, SkipForward, Sparkles, SquarePen, StickyNote, Timer, Trash2, Upload,
-  ArrowDown, FileText, FileArchive, X, Hash, ClipboardPaste, AlignLeft, ArrowUpCircle, Target, Hand, LayoutGrid, BatteryCharging, MicOff, Camera, Pipette, Coffee, ArrowDownCircle, HardDriveDownload,
+  ArrowDown, FileText, FileArchive, X, Hash, ClipboardPaste, AlignLeft, ArrowUpCircle, Target, Hand, LayoutGrid, BatteryCharging, MicOff, Camera, Pipette, Coffee, ArrowDownCircle, HardDriveDownload, CalendarDays, Video, Bell,
 } from 'lucide-react'
 import { NButton, NCard, Ring, Scaled } from './mock'
 import { P, grad, theme, type Icon, type Theme } from './theme'
@@ -11,6 +11,7 @@ import { P, grad, theme, type Icon, type Theme } from './theme'
 const notchTabs: { key: string; icon: Icon; title: string; color: string; t: Theme }[] = [
   { key: 'music', icon: Music, title: 'Musik', color: P.pink, t: theme.violet },
   { key: 'focus', icon: Timer, title: 'Fokus', color: P.orange, t: theme.amber },
+  { key: 'agenda', icon: CalendarDays, title: 'Rapat', color: P.sky, t: theme.electric },
   { key: 'ai', icon: Sparkles, title: 'AI', color: P.violet, t: theme.violet },
   { key: 'notes', icon: StickyNote, title: 'Catatan', color: P.yellow, t: theme.amber },
   { key: 'dev', icon: Braces, title: 'Dev Utils', color: P.sky, t: theme.electric },
@@ -254,6 +255,53 @@ function StatsTab({ t }: { t: Theme }) {
   )
 }
 
+function AgendaTab() {
+  const days = Array.from({ length: 42 }, (_, i) => i - 5) // Nov 2026 starts on a Sunday: 6 blanks in a Monday-first grid
+  const dots: Record<number, number> = { 3: 1, 9: 2, 10: 1, 12: 3, 17: 1, 24: 2 }
+  const events: [string, string, string, string, string | null, boolean][] = [
+    ['09.00', '30m', 'Standup tim', '#0ea5e9', 'berlangsung', true],
+    ['13.00', '1j', 'Review desain', '#a855f7', '25m lagi', true],
+    ['15.30', '45m', '1:1 dengan Budi', '#22c55e', null, false],
+  ]
+  return (
+    <div className="flex h-full gap-3">
+      <div className="w-[250px] rounded-[18px] p-2.5" style={{ background: 'linear-gradient(135deg,#60a5fa29,#6366f114)' }}>
+        <div className="mb-1.5 flex items-center gap-1 text-[13px] font-extrabold">November 2026<span className="ml-auto rounded-full bg-sky-500/15 px-2 py-0.5 text-[10px] font-bold text-sky-500">Hari ini</span></div>
+        <div className="grid grid-cols-7 gap-0.5 text-center">
+          {['S', 'S', 'R', 'K', 'J', 'S', 'M'].map((d, i) => <div key={i} className="text-[9px] font-extrabold text-white/35">{d}</div>)}
+          {days.map((d) => (
+            <div key={d} className={`flex h-[24px] flex-col items-center justify-center rounded-lg text-[11px] font-semibold ${d === 12 ? 'bg-gradient-to-br from-blue-400 to-indigo-500 font-extrabold' : d === 7 ? 'ring-[1.5px] ring-inset ring-sky-500' : d < 7 ? 'text-white/35' : ''}`}>
+              {d >= 1 && d <= 30 ? d : ''}
+              <span className="flex h-[3.5px] gap-0.5">{Array.from({ length: dots[d] ?? 0 }, (_, i) => <span key={i} className={`h-[3.5px] w-[3.5px] rounded-full ${d === 12 ? 'bg-white' : 'bg-sky-500'}`} />)}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="flex flex-1 flex-col gap-2">
+        <div className="flex items-center gap-2.5">
+          <span className="bg-gradient-to-br from-blue-400 to-indigo-500 bg-clip-text text-[30px] font-extrabold leading-none text-transparent">12</span>
+          <div><div className="text-[13px] font-bold">Kamis</div><div className="text-[10.5px] text-zinc-400">3 acara</div></div>
+          <span className="ml-auto"><NButton icon={Plus} title="Tambah" tint={P.sky} prominent /></span>
+        </div>
+        {events.map(([t, d, title, c, st, bell]) => (
+          <div key={title} className="flex items-center gap-2.5 rounded-xl px-2.5 py-2" style={{ background: `linear-gradient(90deg, ${c}29, ${c}0d)` }}>
+            <div className="w-[44px] text-right"><div className="text-[13px] font-extrabold tabular-nums">{t}</div><div className="text-[9.5px] text-zinc-400">{d}</div></div>
+            <span className="h-8 w-[3px] rounded-full" style={{ background: c }} />
+            <div className="flex-1">
+              <div className="text-[12.5px] font-bold">{title}</div>
+              <div className="mt-0.5 flex gap-1 text-[9.5px] font-semibold">
+                {st && <span className={`rounded-full px-1.5 py-px ${st === 'berlangsung' ? 'bg-green-500/15 text-green-500' : 'bg-sky-500/15 text-sky-500'}`}>{st}</span>}
+                {bell && <span className="flex items-center gap-0.5 rounded-full bg-amber-500/15 px-1.5 py-px text-amber-500"><Bell className="h-2 w-2" />10m</span>}
+              </div>
+            </div>
+            {st === 'berlangsung' && <NButton icon={Video} title="Join" tint={P.green} prominent />}
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 function MoreTab() {
   const tools: [Icon, string, string, string][] = [
     [BatteryCharging, 'Notif baterai penuh', 'Kabari saat sampai batas', P.green],
@@ -279,7 +327,7 @@ function MoreTab() {
 
 function NotchBody({ tab }: { tab: number }) {
   const t = notchTabs[tab].t
-  return [<MusicTab />, <FocusTab t={t} />, <AITab />, <NotesTab t={t} />, <DevTab t={t} />, <ClipTab />, <ShelfTab />, <GitTab />, <StatsTab t={t} />, <MoreTab />][tab]
+  return [<MusicTab />, <FocusTab t={t} />, <AgendaTab />, <AITab />, <NotesTab t={t} />, <DevTab t={t} />, <ClipTab />, <ShelfTab />, <GitTab />, <StatsTab t={t} />, <MoreTab />][tab]
 }
 
 /** The expanded island at native size (720×300), scaled to fit. */

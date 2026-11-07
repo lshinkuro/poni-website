@@ -12,7 +12,7 @@ function Notes({ text }: { text: string }) {
       {lines.map((l, i) =>
         l.startsWith('- ') ? (
           <div key={i} className="flex gap-2"><span className="text-emerald-400">•</span><span>{strip(l.slice(2))}</span></div>
-        ) : /^\*\*.+\*\*$/.test(l) ? (
+        ) : l.startsWith('**') ? (
           <div key={i} className="pt-2 font-semibold text-zinc-200">{strip(l)}</div>
         ) : (
           <p key={i}>{strip(l)}</p>
