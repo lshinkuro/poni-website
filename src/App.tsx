@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowDown, ChevronDown, Download } from 'lucide-react'
-import NotchDemo from './components/NotchDemo'
+import { HeroMac, NotchTour, PanelTour } from './components/Tour'
 import CopyCommand from './components/CopyCommand'
-import { DMG, INSTALL, REPO, VERSION, battery, faq, highlights, menubar, notch } from './data'
+import { DMG, INSTALL, REPO, VERSION, battery, faq, highlights } from './data'
 
 // lucide v1 dropped brand icons.
 function Github({ className }: { className?: string }) {
@@ -93,6 +93,7 @@ export default function App() {
           <div className="hidden items-center gap-8 text-sm text-zinc-400 md:flex">
             <a href="#baterai" className="hover:text-white">Baterai</a>
             <a href="#notch" className="hover:text-white">Notch</a>
+            <a href="#menubar" className="hover:text-white">Menu bar</a>
             <a href="#install" className="hover:text-white">Install</a>
             <a href="#faq" className="hover:text-white">FAQ</a>
           </div>
@@ -139,9 +140,9 @@ export default function App() {
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="mt-16">
-            <NotchDemo />
+            <HeroMac />
             <p className="mt-6 inline-flex items-center gap-1.5 text-sm text-zinc-500">
-              <ArrowDown className="h-4 w-4" /> Klik ikon di notch untuk ganti tampilan
+              <ArrowDown className="h-4 w-4" /> Ini tampilan aslinya. Klik ikon di notch untuk ganti tab
             </p>
           </motion.div>
         </section>
@@ -151,14 +152,14 @@ export default function App() {
         </Section>
 
         <Section id="notch" eyebrow="Notch" title="Notch yang benar-benar berguna." sub="Arahkan kursor ke notch, atau ke tengah atas layar di Mac tanpa notch. Tiap tab bisa dimatikan kalau tidak dipakai.">
-          <Grid items={notch} cols="lg:grid-cols-3" />
+          <NotchTour />
           <p className="mt-8 text-center text-sm text-zinc-500">
             Shortcut: <kbd className="font-mono text-zinc-300">⌃⌥Space</kbd> buka/tutup · <kbd className="font-mono text-zinc-300">⌃⌥T</kbd> salin teks dari layar (OCR) · rapat berikutnya muncul di samping kamera dengan tombol Join.
           </p>
         </Section>
 
-        <Section eyebrow="Menu bar" title="Satu panel, empat tab.">
-          <Grid items={menubar} />
+        <Section id="menubar" eyebrow="Menu bar" title="Satu panel, empat tab." sub="Klik ikon baterai di menu bar. Klik tab di preview untuk melihat isinya.">
+          <PanelTour />
         </Section>
 
         <Section id="install" eyebrow="Download" title="Install dalam satu menit." sub="Butuh Mac Apple Silicon dengan macOS 13 atau lebih baru.">
