@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { VERSION } from './data'
+import { DMG, VERSION } from './data'
 
 export type Release = { tag: string; date: string; notes: string; url: string; dmg?: string }
 
@@ -12,7 +12,7 @@ type GHRelease = {
 let cache: Promise<Release[]> | null = null
 
 function fetchReleases() {
-  cache ??= fetch('https://api.github.com/repos/lshinkuro/baterai-safer/releases?per_page=30')
+  cache ??= fetch('https://api.github.com/repos/lshinkuro/poni/releases?per_page=30')
     .then((r) => (r.ok ? r.json() : []))
     .then((list: GHRelease[]) =>
       list
@@ -39,7 +39,7 @@ export function useReleases() {
 }
 
 /** Newest release that actually has a DMG, so the button never names a version it can't deliver. */
-export function useLatestVersion() {
-  const r = useReleases()
-  return r?.find((x) => x.dmg)?.tag.replace(/^v/, '') ?? VERSION
+export function useLatest() {
+  const r = useReleases()?.find((x) => x.dmg)
+  return { version: r?.tag.replace(/^v/, '') ?? VERSION, dmg: r?.dmg ?? DMG }
 }

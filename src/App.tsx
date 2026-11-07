@@ -3,8 +3,8 @@ import { motion } from 'framer-motion'
 import { ArrowDown, ChevronDown, Download } from 'lucide-react'
 import { HeroMac, NotchTour, PanelTour } from './components/Tour'
 import CopyCommand from './components/CopyCommand'
-import { DMG, INSTALL, REPO, battery, faq, highlights } from './data'
-import { useLatestVersion } from './releases'
+import { INSTALL, REPO, battery, faq, highlights } from './data'
+import { useLatest } from './releases'
 import Releases from './components/Releases'
 
 // lucide v1 dropped brand icons.
@@ -82,7 +82,7 @@ function Faq() {
 }
 
 export default function App() {
-  const version = useLatestVersion()
+  const { version, dmg: DMG } = useLatest()
   return (
     <div className="relative overflow-x-hidden">
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[800px] bg-[radial-gradient(ellipse_at_top,rgba(52,211,153,0.18),transparent_60%)]" />
@@ -91,7 +91,7 @@ export default function App() {
         <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
           <a href="#" className="flex items-center gap-2.5 font-bold">
             <img src="/icon.png" alt="" className="h-8 w-8" />
-            Baterai Safer
+            Poni
           </a>
           <div className="hidden items-center gap-8 text-sm text-zinc-400 md:flex">
             <a href="#baterai" className="hover:text-white">Baterai</a>
@@ -117,14 +117,14 @@ export default function App() {
         <section className="mx-auto max-w-6xl px-4 pb-20 pt-16 text-center sm:px-6 sm:pt-24">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <a href={`${REPO}/releases/tag/v${version}`} className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-1.5 text-sm text-emerald-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> v{version} · siap untuk macOS 27
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> v{version} · dulu Baterai Safer
             </a>
             <h1 className="mx-auto max-w-4xl text-5xl font-extrabold tracking-tight sm:text-7xl">
-              Jaga baterai MacBook{' '}
-              <span className="bg-gradient-to-r from-emerald-300 to-teal-400 bg-clip-text text-transparent">tetap sehat.</span>
+              Kenalan sama{' '}
+              <span className="bg-gradient-to-r from-emerald-300 to-indigo-400 bg-clip-text text-transparent">Poni.</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-zinc-400 sm:text-xl">
-              Charge limit, kalibrasi, dan top up dari menu bar. Bonus notch serbaguna untuk musik, fokus, catatan, clipboard, dan Git.
+              Notch Mac yang jagain baterai, bantu fokus, ngingetin rapat, nyatet ke Apple Notes, sampai ngajarin bahasa. Poni-nya layar Mac kamu.
               Gratis dan open source.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -198,7 +198,7 @@ export default function App() {
             </ol>
             <div className="flex flex-col items-center justify-center gap-3 text-sm sm:flex-row">
               <span className="text-zinc-500">Update:</span>
-              <code className="rounded-lg bg-white/5 px-3 py-1.5 font-mono text-zinc-300">brew update && brew upgrade baterai-safer</code>
+              <code className="rounded-lg bg-white/5 px-3 py-1.5 font-mono text-zinc-300">brew update && brew upgrade poni</code>
               <a href={`${REPO}/archive/refs/tags/v${version}.zip`} className="text-emerald-400 hover:underline">Download source (.zip)</a>
             </div>
           </div>
@@ -225,7 +225,7 @@ export default function App() {
 
       <footer className="border-t border-white/5">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 text-sm text-zinc-500 sm:flex-row sm:px-6">
-          <span>© {new Date().getFullYear()} Baterai Safer · MIT License</span>
+          <span>© {new Date().getFullYear()} Poni · MIT License</span>
           <div className="flex gap-6">
             <a href={REPO} className="hover:text-white">GitHub</a>
             <a href={`${REPO}/issues`} className="hover:text-white">Laporkan bug</a>

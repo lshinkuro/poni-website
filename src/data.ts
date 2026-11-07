@@ -3,16 +3,17 @@ import {
   NotebookPen, Sailboat, ShieldCheck, Sparkles, Thermometer, Timer, Trash2, Wrench, Zap,
 } from 'lucide-react'
 
-export const REPO = 'https://github.com/lshinkuro/baterai-safer'
+export const REPO = 'https://github.com/lshinkuro/poni'
 export const VERSION = '0.6.6' // fallback until GitHub Releases loads
 // Fixed asset name, so this always points at the newest release.
-export const DMG = `${REPO}/releases/latest/download/BateraiSafer.dmg`
+// Fallback until GitHub Releases loads; the live link comes from useLatest().
+export const DMG = `${REPO}/releases/latest`
 
 export const INSTALL = [
-  'brew tap lshinkuro/baterai-safer https://github.com/lshinkuro/baterai-safer',
-  'brew trust lshinkuro/baterai-safer',
-  'brew install baterai-safer',
-  'brew services start baterai-safer',
+  'brew tap lshinkuro/poni https://github.com/lshinkuro/poni',
+  'brew trust lshinkuro/poni',
+  'brew install poni',
+  'brew services start poni',
 ]
 
 export const battery = [
@@ -48,11 +49,12 @@ export const menubar = [
 ]
 
 export const faq = [
-  { q: 'Gratis?', a: 'Ya. Baterai Safer open source dengan lisensi MIT, tanpa iklan dan tanpa langganan.' },
+  { q: 'Dulu namanya Baterai Safer?', a: 'Iya! Fiturnya makin banyak, jadi namanya ganti jadi Poni (karena notch itu poni-nya layar Mac). Pengguna lama tetap dapat update otomatis, dan semua pengaturan, catatan, dan progres tetap aman.' },
+  { q: 'Gratis?', a: 'Ya. Poni open source dengan lisensi MIT, tanpa iklan dan tanpa langganan.' },
   { q: 'Mac apa yang didukung?', a: 'Mac Apple Silicon (M1 ke atas). Mac Intel tidak didukung.' },
   { q: 'Kenapa macOS memblokir aplikasi dari DMG?', a: 'Aplikasi belum ditandatangani Developer ID Apple. Buka System Settings → Privacy & Security → Open Anyway sekali saja. Lewat Homebrew, aplikasi di-build langsung di Mac kamu jadi tidak diblokir, dan update cukup dengan brew upgrade.' },
   { q: 'Apa itu "helper"?', a: 'Daemon kecil yang jalan sebagai root untuk mengatur pengisian lewat SMC, supaya batas tetap berlaku walau aplikasi ditutup. Dipasang sekali lewat tombol Install helper… di menu bar.' },
-  { q: 'Bagaimana cara uninstall dengan benar?', a: 'Jalankan sudo baterai-safer uninstall-daemon dulu, lalu brew uninstall baterai-safer. Di macOS 27, kembalikan Charge Limit ke 100% di System Settings → Battery. Sejak v0.6.2 helper juga membersihkan dirinya sendiri kalau aplikasinya terhapus.' },
+  { q: 'Bagaimana cara uninstall dengan benar?', a: 'Jalankan sudo poni uninstall-daemon dulu, lalu brew uninstall poni. Di macOS 27, kembalikan Charge Limit ke 100% di System Settings → Battery. Sejak v0.6.2 helper juga membersihkan dirinya sendiri kalau aplikasinya terhapus.' },
   { q: 'Aman untuk baterai?', a: 'Membatasi pengisian di 80% adalah cara yang sama yang dipakai fitur bawaan Apple. Aplikasi memakai API privat Apple yang bisa berubah di update macOS, jadi gunakan dengan risiko sendiri.' },
 ]
 

@@ -182,9 +182,9 @@ export default function PanelPreview({ tab, setTab }: { tab: number; setTab: (i:
       <div className="relative flex h-[620px] w-[400px] flex-col overflow-hidden rounded-[14px] border border-white/10 bg-[#1e1e20]/95 text-left text-white shadow-2xl">
         <motion.div className="pointer-events-none absolute inset-x-0 top-0 h-[330px]" animate={{ background: `radial-gradient(330px circle at 50% 0%, ${t[0]}66, ${t[1]}1f 50%, transparent 70%)` }} transition={{ duration: 0.4 }} />
         <div className="relative flex items-center gap-2.5 px-4 pt-3.5">
-          <IconBadge icon={ShieldCheck} color={P.green} size={30} />
+          <img src="/icon.png" alt="" className="h-8 w-8" />
           <div className="flex-1">
-            <div className="text-[15px] font-extrabold">Baterai Safer</div>
+            <div className="text-[15px] font-extrabold">Poni</div>
             <div className="text-[11px] font-medium text-zinc-400">80% · dicas</div>
           </div>
           <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/[.07]"><Power className="h-3 w-3" strokeWidth={3} /></span>

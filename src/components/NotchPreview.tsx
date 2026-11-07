@@ -169,7 +169,7 @@ function DevTab({ t }: { t: Theme }) {
 function ClipTab() {
   const rows: [string, boolean, boolean][] = [
     ['npm run build && npm run preview', false, true], ['Screenshot 2026-11-07 · teks terbaca', true, false],
-    ['https://github.com/lshinkuro/baterai-safer', false, false], ['{"status":"ok","items":12}', false, false], ['Rapat jam 3 di ruang Merapi', false, false],
+    ['https://github.com/lshinkuro/poni', false, false], ['{"status":"ok","items":12}', false, false], ['Rapat jam 3 di ruang Merapi', false, false],
   ]
   return (
     <div className="flex h-full flex-col gap-2.5">
@@ -213,7 +213,7 @@ function ShelfTab() {
 }
 
 function GitTab() {
-  const repos: [string, string, string, string][] = [['baterai-safer', 'main', '2 perubahan', '↑1'], ['website', 'main', 'bersih', ''], ['mobile-app', 'feature/login', '5 perubahan', '↓3']]
+  const repos: [string, string, string, string][] = [['poni', 'main', '2 perubahan', '↑1'], ['website', 'main', 'bersih', ''], ['mobile-app', 'feature/login', '5 perubahan', '↓3']]
   return (
     <div className="flex h-full flex-col gap-2.5">
       <div className="flex items-center gap-2">
