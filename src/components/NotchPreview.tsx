@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import {
   BatteryMedium, Braces, Clock, ClipboardList, Copy, Cpu, Flame, GitBranch, Gauge, HardDrive, Image as ImageIcon, Inbox, MemoryStick,
   Music, Pause, Pin, Plus, Radio, RotateCcw, Search, SkipBack, SkipForward, Sparkles, SquarePen, StickyNote, Timer, Trash2, Upload,
-  ArrowDown, FileText, FileArchive, X, Hash, ClipboardPaste, AlignLeft, ArrowUpCircle, Target, Hand,
+  ArrowDown, FileText, FileArchive, X, Hash, ClipboardPaste, AlignLeft, ArrowUpCircle, Target, Hand, LayoutGrid, BatteryCharging, MicOff, Camera, Pipette,
 } from 'lucide-react'
 import { NButton, NCard, Ring, Scaled } from './mock'
 import { P, grad, theme, type Icon, type Theme } from './theme'
@@ -18,6 +18,7 @@ const notchTabs: { key: string; icon: Icon; title: string; color: string; t: The
   { key: 'shelf', icon: Inbox, title: 'Shelf', color: P.blue, t: theme.electric },
   { key: 'git', icon: GitBranch, title: 'Git', color: P.indigo, t: theme.electric },
   { key: 'stats', icon: Gauge, title: 'Stats', color: P.green, t: theme.mint },
+  { key: 'more', icon: LayoutGrid, title: 'Lainnya', color: P.slate, t: theme.electric },
 ]
 
 const ART = 'linear-gradient(135deg,#f472b6,#a855f7 50%,#f97316)'
@@ -253,9 +254,29 @@ function StatsTab({ t }: { t: Theme }) {
   )
 }
 
+function MoreTab() {
+  const tools: [Icon, string, string, string][] = [
+    [BatteryCharging, 'Notif baterai penuh', 'Kabari saat sampai batas', P.green],
+    [MicOff, 'Mic Mute', 'Bisukan mic di semua aplikasi · ⌃⌥M', P.red],
+    [Camera, 'Kamera cermin', 'Cek penampilan sebelum rapat', P.sky],
+    [Pipette, 'Color picker', 'Ambil warna dari layar', P.pink],
+  ]
+  return (
+    <div className="grid grid-cols-4 gap-2.5">
+      {tools.map(([I, t, d, c]) => (
+        <div key={t} className="flex min-h-[120px] flex-col gap-2 rounded-2xl bg-white/[.06] p-3">
+          <span className="flex h-[38px] w-[38px] items-center justify-center rounded-[11px]" style={{ background: `${c}2e`, color: c }}><I className="h-4 w-4" strokeWidth={2.6} /></span>
+          <div className="text-[12.5px] font-bold">{t}</div>
+          <div className="text-[10.5px] leading-snug text-zinc-400">{d}</div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
 function NotchBody({ tab }: { tab: number }) {
   const t = notchTabs[tab].t
-  return [<MusicTab />, <FocusTab t={t} />, <AITab />, <NotesTab t={t} />, <DevTab t={t} />, <ClipTab />, <ShelfTab />, <GitTab />, <StatsTab t={t} />][tab]
+  return [<MusicTab />, <FocusTab t={t} />, <AITab />, <NotesTab t={t} />, <DevTab t={t} />, <ClipTab />, <ShelfTab />, <GitTab />, <StatsTab t={t} />, <MoreTab />][tab]
 }
 
 /** The expanded island at native size (720×300), scaled to fit. */
