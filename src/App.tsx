@@ -151,10 +151,10 @@ export default function App() {
           <Grid items={battery} />
         </Section>
 
-        <Section id="notch" eyebrow="Notch" title="Notch yang benar-benar berguna." sub="Arahkan kursor ke notch, atau ke tengah atas layar di Mac tanpa notch. Tiap tab bisa dimatikan kalau tidak dipakai.">
+        <Section id="notch" eyebrow="Notch" title="Notch yang benar-benar berguna." sub="Arahkan kursor atau klik notch (bisa dipilih), atau tengah atas layar di Mac tanpa notch. Tiap tab bisa dimatikan kalau tidak dipakai.">
           <NotchTour />
           <p className="mt-8 text-center text-sm text-zinc-500">
-            Shortcut: <kbd className="font-mono text-zinc-300">⌃⌥Space</kbd> buka/tutup · <kbd className="font-mono text-zinc-300">⌃⌥T</kbd> salin teks dari layar (OCR) · rapat berikutnya muncul di samping kamera dengan tombol Join.
+            Shortcut: <kbd className="font-mono text-zinc-300">⌃⌥Space</kbd> buka/tutup · <kbd className="font-mono text-zinc-300">⌃⌥S</kbd> mulai/jeda fokus · <kbd className="font-mono text-zinc-300">⌃⌥T</kbd> salin teks dari layar (OCR) · rapat berikutnya muncul di samping kamera dengan tombol Join.
           </p>
         </Section>
 

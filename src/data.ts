@@ -5,7 +5,7 @@ import {
 
 export const REPO = 'https://github.com/lshinkuro/baterai-safer'
 // shortcut: hardcoded release, bump together with Formula/baterai-safer.rb
-export const VERSION = '0.6.3'
+export const VERSION = '0.6.4'
 // Fixed asset name, so this always points at the newest release.
 export const DMG = `${REPO}/releases/latest/download/BateraiSafer.dmg`
 
@@ -29,8 +29,8 @@ export const battery = [
 
 export const notch = [
   { icon: Music, title: 'Musik', desc: 'Spotify / Apple Music dengan album art, kontrol, dan lirik berjalan.' },
-  { icon: Timer, title: 'Fokus', desc: 'Pomodoro 25/5, streak harian, grafik 7 hari.' },
-  { icon: Bot, title: 'AI', desc: 'Chat dengan CLI AI yang terpasang, seperti Claude Code dan Kiro.' },
+  { icon: Timer, title: 'Fokus', desc: 'Pomodoro 25/50/90 menit atau atur sendiri, niat sesi, blokir aplikasi pengganggu, jurnal setelah sesi, otomatis jeda saat rapat. ⌃⌥S dari mana saja.' },
+  { icon: Bot, title: 'AI', desc: 'Chat dengan CLI AI yang terpasang (Claude Code, Kiro), plus halaman Pemakaian: berapa token AI yang kamu pakai hari ini dan 7 hari terakhir.' },
   { icon: NotebookPen, title: 'Catatan', desc: 'Quick notes multi-halaman, tersimpan otomatis, rapikan dengan AI.' },
   { icon: Code2, title: 'Dev Utils', desc: 'JSON, JWT, Base64, URL, timestamp, SHA-256/MD5, UUID. Semua offline.' },
   { icon: Clipboard, title: 'Clipboard', desc: 'Riwayat copy, pin, OCR teks dari gambar. Isi password manager diabaikan.' },

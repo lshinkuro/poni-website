@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import {
   BatteryMedium, Braces, Clock, ClipboardList, Copy, Cpu, Flame, GitBranch, Gauge, HardDrive, Image as ImageIcon, Inbox, MemoryStick,
   Music, Pause, Pin, Plus, Radio, RotateCcw, Search, SkipBack, SkipForward, Sparkles, SquarePen, StickyNote, Timer, Trash2, Upload,
-  ArrowDown, FileText, FileArchive, X, Hash, ClipboardPaste, AlignLeft, ArrowUpCircle,
+  ArrowDown, FileText, FileArchive, X, Hash, ClipboardPaste, AlignLeft, ArrowUpCircle, Target, Hand,
 } from 'lucide-react'
 import { NButton, NCard, Ring, Scaled } from './mock'
 import { P, grad, theme, type Icon, type Theme } from './theme'
@@ -60,24 +60,29 @@ function FocusTab({ t }: { t: Theme }) {
         <Ring value={0.97} color="#f97316" label="24:17" caption="fokus" size={128} line={10} />
         <div className="flex gap-2"><NButton icon={RotateCcw} /><NButton icon={Pause} title="Jeda" tint={P.orange} prominent /><NButton icon={SkipForward} /></div>
       </NCard>
-      <div className="flex flex-1 flex-col gap-2.5">
-        <div className="flex h-16 gap-2.5">
-          {[[Flame, P.orange, '6', 'hari beruntun'], [Clock, P.blue, '75', 'menit hari ini']].map(([I, c, v, l]) => {
-            const Ic = I as Icon
-            return (
-              <NCard key={l as string} t={t} pad={10} className="flex flex-1 items-center gap-2.5">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full" style={{ background: `${c}2e`, color: c as string }}><Ic className="h-3.5 w-3.5" strokeWidth={2.8} /></span>
-                <div><div className="text-lg font-bold leading-tight">{v as string}</div><div className="text-[10px] text-zinc-400">{l as string}</div></div>
-              </NCard>
-            )
-          })}
+      <div className="flex flex-1 flex-col gap-2">
+        <div className="flex gap-2">
+          <div className="flex flex-1 items-center gap-1.5 rounded-full bg-white/[.09] px-3 py-[7px] text-[12px] font-semibold"><Target className="h-3.5 w-3.5 text-orange-500" />Laporan Q3</div>
+          <div className="flex items-center gap-0.5 rounded-full bg-white/[.07] p-0.5 text-[11px] font-bold opacity-50">
+            {['25m', '50m', '90m'].map((m) => <span key={m} className={`rounded-full px-2 py-1 ${m === '50m' ? 'bg-orange-500/90' : 'text-zinc-400'}`}>{m}</span>)}
+            <span className="px-1 text-zinc-400">⇅</span>
+          </div>
         </div>
-        <NCard t={t} className="flex flex-1 flex-col">
-          <div className="text-[9.5px] font-bold text-zinc-400">7 HARI TERAKHIR</div>
+        <div className="flex items-center gap-2 text-[11.5px] font-semibold">
+          <span className="relative inline-block h-[14px] w-[24px] rounded-full bg-orange-500"><span className="absolute right-0.5 top-0.5 h-[10px] w-[10px] rounded-full bg-white" /></span>
+          Blokir pengganggu <span className="font-normal text-zinc-400">5 aplikasi ▾</span>
+          <span className="ml-auto flex items-center gap-1 rounded-full bg-orange-500/15 px-1.5 py-0.5 text-[9.5px] text-orange-500"><Hand className="h-2.5 w-2.5" />aktif</span>
+        </div>
+        <NCard t={t} pad={10} className="flex flex-1 flex-col">
+          <div className="flex gap-2.5 text-[10px] font-bold">
+            <span className="flex items-center gap-1 text-orange-500"><Flame className="h-3 w-3" />6 hari</span>
+            <span className="flex items-center gap-1 text-blue-500"><Clock className="h-3 w-3" />75 menit hari ini</span>
+            <span className="ml-auto text-zinc-400">7 HARI</span>
+          </div>
           <div className="mt-2 flex flex-1 items-end gap-3">
             {days.map(([d, m]) => (
               <div key={d} className="flex flex-1 flex-col items-center gap-1">
-                <div className="w-full rounded bg-gradient-to-b from-orange-400 to-orange-600" style={{ height: m * 0.5 }} />
+                <div className="w-full rounded bg-gradient-to-b from-orange-400 to-orange-600" style={{ height: m * 0.4 }} />
                 <span className="text-[9px] text-zinc-400">{d}</span>
               </div>
             ))}
