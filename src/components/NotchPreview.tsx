@@ -311,7 +311,7 @@ function MoreTab() {
     [Coffee, 'Tetap menyala', '30 menit, 1 jam, atau sampai jam tertentu', P.amber],
     [ArrowDownCircle, 'Download', 'Kabari saat download selesai', P.blue],
     [HardDriveDownload, 'Eject USB', 'Lepas flashdisk dengan aman', P.indigo],
-    [BookOpen, 'Belajar Bahasa', 'Inggris & Spanyol, TOEFL, ngobrol pakai suara', P.teal],
+    [BookOpen, 'Belajar Bahasa', 'Inggris, Spanyol & Jepang · ngobrol pakai suara', P.teal],
   ]
   return (
     <div className="grid grid-cols-4 gap-2.5">

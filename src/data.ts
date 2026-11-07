@@ -37,7 +37,7 @@ export const notch = [
   { icon: FolderUp, title: 'Shelf', desc: 'Seret file ke notch, seret keluar, atau kirim lewat AirDrop.' },
   { icon: GitBranch, title: 'Git', desc: 'Status repo, pull/push, commit dengan pesan AI, review PR GitHub & Bitbucket.' },
   { icon: Cpu, title: 'Stats', desc: 'Baterai, CPU, memori, dan disk sekilas pandang.' },
-  { icon: LayoutGrid, title: 'Lainnya', desc: 'Notif saat baterai penuh, Mic Mute untuk semua aplikasi (⌃⌥M), kamera cermin, color picker, tetap menyala dengan durasi, notif download, eject USB, dan Belajar Bahasa (Inggris & Spanyol, soal TOEFL, ngobrol pakai suara dengan Apple Intelligence atau Claude).' },
+  { icon: LayoutGrid, title: 'Lainnya', desc: 'Notif saat baterai penuh, Mic Mute untuk semua aplikasi (⌃⌥M), kamera cermin, color picker, tetap menyala dengan durasi, notif download, eject USB, dan Belajar Bahasa (Inggris, Spanyol & Jepang, soal TOEFL/JLPT, ngobrol pakai suara dengan Apple Intelligence atau Claude).' },
 ]
 
 export const menubar = [
