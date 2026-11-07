@@ -3,7 +3,9 @@ import { motion } from 'framer-motion'
 import { ArrowDown, ChevronDown, Download } from 'lucide-react'
 import { HeroMac, NotchTour, PanelTour } from './components/Tour'
 import CopyCommand from './components/CopyCommand'
-import { DMG, INSTALL, REPO, VERSION, battery, faq, highlights } from './data'
+import { DMG, INSTALL, REPO, battery, faq, highlights } from './data'
+import { useLatestVersion } from './releases'
+import Releases from './components/Releases'
 
 // lucide v1 dropped brand icons.
 function Github({ className }: { className?: string }) {
@@ -80,6 +82,7 @@ function Faq() {
 }
 
 export default function App() {
+  const version = useLatestVersion()
   return (
     <div className="relative overflow-x-hidden">
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[800px] bg-[radial-gradient(ellipse_at_top,rgba(52,211,153,0.18),transparent_60%)]" />
@@ -95,6 +98,7 @@ export default function App() {
             <a href="#notch" className="hover:text-white">Notch</a>
             <a href="#menubar" className="hover:text-white">Menu bar</a>
             <a href="#install" className="hover:text-white">Install</a>
+            <a href="#rilis" className="hover:text-white">Rilis</a>
             <a href="#faq" className="hover:text-white">FAQ</a>
           </div>
           <div className="flex items-center gap-2">
@@ -112,8 +116,8 @@ export default function App() {
         {/* Hero */}
         <section className="mx-auto max-w-6xl px-4 pb-20 pt-16 text-center sm:px-6 sm:pt-24">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <a href={`${REPO}/releases/tag/v${VERSION}`} className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-1.5 text-sm text-emerald-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> v{VERSION} · siap untuk macOS 27
+            <a href={`${REPO}/releases/tag/v${version}`} className="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-1.5 text-sm text-emerald-300">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> v{version} · siap untuk macOS 27
             </a>
             <h1 className="mx-auto max-w-4xl text-5xl font-extrabold tracking-tight sm:text-7xl">
               Jaga baterai MacBook{' '}
@@ -174,7 +178,7 @@ export default function App() {
                 </p>
               </div>
               <a href={DMG} className="inline-flex shrink-0 items-center gap-2 rounded-full bg-emerald-400 px-6 py-3 font-semibold text-zinc-950 transition hover:bg-emerald-300">
-                <Download className="h-5 w-5" /> v{VERSION}
+                <Download className="h-5 w-5" /> v{version}
               </a>
             </div>
             <div className="text-center text-sm text-zinc-500">atau lewat Homebrew (di-build di Mac kamu, update dengan brew upgrade)</div>
@@ -195,9 +199,13 @@ export default function App() {
             <div className="flex flex-col items-center justify-center gap-3 text-sm sm:flex-row">
               <span className="text-zinc-500">Update:</span>
               <code className="rounded-lg bg-white/5 px-3 py-1.5 font-mono text-zinc-300">brew update && brew upgrade baterai-safer</code>
-              <a href={`${REPO}/archive/refs/tags/v${VERSION}.zip`} className="text-emerald-400 hover:underline">Download source (.zip)</a>
+              <a href={`${REPO}/archive/refs/tags/v${version}.zip`} className="text-emerald-400 hover:underline">Download source (.zip)</a>
             </div>
           </div>
+        </Section>
+
+        <Section id="rilis" eyebrow="Rilis" title="Riwayat versi." sub="Catatan update tiap versi. Butuh versi lama? Download DMG atau source-nya di sini.">
+          <Releases />
         </Section>
 
         <Section id="faq" eyebrow="FAQ" title="Pertanyaan umum.">
@@ -209,7 +217,7 @@ export default function App() {
             <img src="/icon.png" alt="" className="mx-auto mb-6 h-20 w-20" />
             <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Baterai sehat lebih lama. Gratis, selamanya.</h2>
             <a href={DMG} className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 font-semibold text-zinc-950 transition hover:bg-emerald-300">
-              <Download className="h-5 w-5" /> Download v{VERSION}
+              <Download className="h-5 w-5" /> Download v{version}
             </a>
           </div>
         </section>

@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import {
   BatteryMedium, Braces, Clock, ClipboardList, Copy, Cpu, Flame, GitBranch, Gauge, HardDrive, Image as ImageIcon, Inbox, MemoryStick,
   Music, Pause, Pin, Plus, Radio, RotateCcw, Search, SkipBack, SkipForward, Sparkles, SquarePen, StickyNote, Timer, Trash2, Upload,
-  ArrowDown, FileText, FileArchive, X, Hash, ClipboardPaste, AlignLeft, ArrowUpCircle, Target, Hand, LayoutGrid, BatteryCharging, MicOff, Camera, Pipette,
+  ArrowDown, FileText, FileArchive, X, Hash, ClipboardPaste, AlignLeft, ArrowUpCircle, Target, Hand, LayoutGrid, BatteryCharging, MicOff, Camera, Pipette, Coffee, ArrowDownCircle, HardDriveDownload,
 } from 'lucide-react'
 import { NButton, NCard, Ring, Scaled } from './mock'
 import { P, grad, theme, type Icon, type Theme } from './theme'
@@ -260,11 +260,14 @@ function MoreTab() {
     [MicOff, 'Mic Mute', 'Bisukan mic di semua aplikasi · ⌃⌥M', P.red],
     [Camera, 'Kamera cermin', 'Cek penampilan sebelum rapat', P.sky],
     [Pipette, 'Color picker', 'Ambil warna dari layar', P.pink],
+    [Coffee, 'Tetap menyala', '30 menit, 1 jam, atau sampai jam tertentu', P.amber],
+    [ArrowDownCircle, 'Download', 'Kabari saat download selesai', P.blue],
+    [HardDriveDownload, 'Eject USB', 'Lepas flashdisk dengan aman', P.indigo],
   ]
   return (
     <div className="grid grid-cols-4 gap-2.5">
       {tools.map(([I, t, d, c]) => (
-        <div key={t} className="flex min-h-[120px] flex-col gap-2 rounded-2xl bg-white/[.06] p-3">
+        <div key={t} className="flex min-h-[86px] flex-col gap-1.5 rounded-2xl bg-white/[.06] p-3">
           <span className="flex h-[38px] w-[38px] items-center justify-center rounded-[11px]" style={{ background: `${c}2e`, color: c }}><I className="h-4 w-4" strokeWidth={2.6} /></span>
           <div className="text-[12.5px] font-bold">{t}</div>
           <div className="text-[10.5px] leading-snug text-zinc-400">{d}</div>

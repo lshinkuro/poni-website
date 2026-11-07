@@ -4,8 +4,7 @@ import {
 } from 'lucide-react'
 
 export const REPO = 'https://github.com/lshinkuro/baterai-safer'
-// shortcut: hardcoded release, bump together with Formula/baterai-safer.rb
-export const VERSION = '0.6.5'
+export const VERSION = '0.6.6' // fallback until GitHub Releases loads
 // Fixed asset name, so this always points at the newest release.
 export const DMG = `${REPO}/releases/latest/download/BateraiSafer.dmg`
 
@@ -37,7 +36,7 @@ export const notch = [
   { icon: FolderUp, title: 'Shelf', desc: 'Seret file ke notch, seret keluar, atau kirim lewat AirDrop.' },
   { icon: GitBranch, title: 'Git', desc: 'Status repo, pull/push, commit dengan pesan AI, review PR GitHub & Bitbucket.' },
   { icon: Cpu, title: 'Stats', desc: 'Baterai, CPU, memori, dan disk sekilas pandang.' },
-  { icon: LayoutGrid, title: 'Lainnya', desc: 'Notif saat baterai penuh, Mic Mute untuk semua aplikasi (⌃⌥M), kamera cermin sebelum rapat, dan color picker.' },
+  { icon: LayoutGrid, title: 'Lainnya', desc: 'Notif saat baterai penuh, Mic Mute untuk semua aplikasi (⌃⌥M), kamera cermin, color picker, tetap menyala dengan durasi, notif download, dan eject USB.' },
 ]
 
 export const menubar = [
