@@ -5,7 +5,9 @@ import {
 
 export const REPO = 'https://github.com/lshinkuro/baterai-safer'
 // shortcut: hardcoded release, bump together with Formula/baterai-safer.rb
-export const VERSION = '0.6.2'
+export const VERSION = '0.6.3'
+// Fixed asset name, so this always points at the newest release.
+export const DMG = `${REPO}/releases/latest/download/BateraiSafer.dmg`
 
 export const INSTALL = [
   'brew tap lshinkuro/baterai-safer https://github.com/lshinkuro/baterai-safer',
@@ -47,7 +49,7 @@ export const menubar = [
 export const faq = [
   { q: 'Gratis?', a: 'Ya. Baterai Safer open source dengan lisensi MIT, tanpa iklan dan tanpa langganan.' },
   { q: 'Mac apa yang didukung?', a: 'Mac Apple Silicon (M1 ke atas). Mac Intel tidak didukung.' },
-  { q: 'Kenapa install lewat Homebrew?', a: 'Aplikasi belum ditandatangani Developer ID Apple. Lewat Homebrew, aplikasi di-build langsung di Mac kamu dari source code, jadi tidak diblokir Gatekeeper dan update cukup dengan brew upgrade.' },
+  { q: 'Kenapa macOS memblokir aplikasi dari DMG?', a: 'Aplikasi belum ditandatangani Developer ID Apple. Buka System Settings → Privacy & Security → Open Anyway sekali saja. Lewat Homebrew, aplikasi di-build langsung di Mac kamu jadi tidak diblokir, dan update cukup dengan brew upgrade.' },
   { q: 'Apa itu "helper"?', a: 'Daemon kecil yang jalan sebagai root untuk mengatur pengisian lewat SMC, supaya batas tetap berlaku walau aplikasi ditutup. Dipasang sekali lewat tombol Install helper… di menu bar.' },
   { q: 'Bagaimana cara uninstall dengan benar?', a: 'Jalankan sudo baterai-safer uninstall-daemon dulu, lalu brew uninstall baterai-safer. Di macOS 27, kembalikan Charge Limit ke 100% di System Settings → Battery. Sejak v0.6.2 helper juga membersihkan dirinya sendiri kalau aplikasinya terhapus.' },
   { q: 'Aman untuk baterai?', a: 'Membatasi pengisian di 80% adalah cara yang sama yang dipakai fitur bawaan Apple. Aplikasi memakai API privat Apple yang bisa berubah di update macOS, jadi gunakan dengan risiko sendiri.' },

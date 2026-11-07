@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { ArrowDown, ChevronDown, Download } from 'lucide-react'
 import NotchDemo from './components/NotchDemo'
 import CopyCommand from './components/CopyCommand'
-import { INSTALL, REPO, VERSION, battery, faq, highlights, menubar, notch } from './data'
+import { DMG, INSTALL, REPO, VERSION, battery, faq, highlights, menubar, notch } from './data'
 
 // lucide v1 dropped brand icons.
 function Github({ className }: { className?: string }) {
@@ -123,7 +123,7 @@ export default function App() {
               Gratis dan open source.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a href="#install" className="inline-flex items-center gap-2 rounded-full bg-emerald-400 px-7 py-3.5 font-semibold text-zinc-950 shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-300">
+              <a href={DMG} className="inline-flex items-center gap-2 rounded-full bg-emerald-400 px-7 py-3.5 font-semibold text-zinc-950 shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-300">
                 <Download className="h-5 w-5" /> Download gratis
               </a>
               <a href={REPO} className="inline-flex items-center gap-2 rounded-full border border-white/15 px-7 py-3.5 font-semibold transition hover:bg-white/5">
@@ -161,13 +161,27 @@ export default function App() {
           <Grid items={menubar} />
         </Section>
 
-        <Section id="install" eyebrow="Download" title="Install dalam satu menit." sub="Butuh Mac Apple Silicon dan Homebrew. Aplikasi di-build langsung di Mac kamu dari source code.">
+        <Section id="install" eyebrow="Download" title="Install dalam satu menit." sub="Butuh Mac Apple Silicon dengan macOS 13 atau lebih baru.">
           <div className="mx-auto max-w-3xl space-y-6">
+            <div className="flex flex-col items-center gap-5 rounded-2xl border border-emerald-400/30 bg-emerald-400/[0.06] p-6 text-center sm:flex-row sm:text-left">
+              <img src="/icon.png" alt="" className="h-16 w-16" />
+              <div className="flex-1">
+                <div className="font-semibold">Download DMG</div>
+                <p className="mt-1 text-sm text-zinc-400">
+                  Seret ke Applications. Saat pertama dibuka, macOS akan memblokir karena aplikasi belum ditandatangani Apple: buka
+                  System Settings → Privacy & Security → <span className="text-zinc-200">Open Anyway</span>.
+                </p>
+              </div>
+              <a href={DMG} className="inline-flex shrink-0 items-center gap-2 rounded-full bg-emerald-400 px-6 py-3 font-semibold text-zinc-950 transition hover:bg-emerald-300">
+                <Download className="h-5 w-5" /> v{VERSION}
+              </a>
+            </div>
+            <div className="text-center text-sm text-zinc-500">atau lewat Homebrew (di-build di Mac kamu, update dengan brew upgrade)</div>
             <CopyCommand lines={INSTALL} />
             <ol className="grid gap-4 sm:grid-cols-3">
               {[
-                ['1', 'Jalankan perintah di atas', 'Belum punya Homebrew? Pasang dulu dari brew.sh.'],
-                ['2', 'Klik ikon baterai', 'Ikon muncul di menu bar setelah brew services start.'],
+                ['1', 'Pasang aplikasinya', 'Lewat DMG, atau perintah Homebrew di atas.'],
+                ['2', 'Klik ikon baterai', 'Ikon muncul di menu bar dan jalan otomatis saat login.'],
                 ['3', 'Install helper…', 'Masukkan password admin sekali, batas langsung aktif.'],
               ].map(([n, t, d]) => (
                 <li key={n} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
@@ -193,7 +207,7 @@ export default function App() {
           <div className="rounded-3xl border border-emerald-400/20 bg-gradient-to-br from-emerald-400/15 to-teal-500/5 px-6 py-16 text-center">
             <img src="/icon.png" alt="" className="mx-auto mb-6 h-20 w-20" />
             <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">Baterai sehat lebih lama. Gratis, selamanya.</h2>
-            <a href="#install" className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 font-semibold text-zinc-950 transition hover:bg-emerald-300">
+            <a href={DMG} className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 font-semibold text-zinc-950 transition hover:bg-emerald-300">
               <Download className="h-5 w-5" /> Download v{VERSION}
             </a>
           </div>
