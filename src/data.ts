@@ -1,5 +1,5 @@
 import {
-  BatteryCharging, BatteryFull, LayoutGrid, CalendarDays, Bot, Clipboard, Code2, Cpu, FolderUp, GitBranch, Gauge, Moon, Music,
+  BatteryCharging, BatteryFull, House, LayoutGrid, MoonStar, CalendarDays, Bot, Clipboard, Code2, Cpu, FolderUp, GitBranch, Gauge, Moon, Music,
   NotebookPen, Sailboat, ShieldCheck, Sparkles, Thermometer, Timer, Trash2, Wrench, Zap,
 } from 'lucide-react'
 
@@ -28,6 +28,7 @@ export const battery = [
 ]
 
 export const notch = [
+  { icon: House, title: 'Home', desc: 'Sapaan harian dan kartu yang kamu pilih sendiri: musik, kalender, todo, fokus, ibadah, dan lainnya.' },
   { icon: Music, title: 'Musik', desc: 'Spotify / Apple Music dengan album art, kontrol, dan lirik berjalan.' },
   { icon: Timer, title: 'Fokus', desc: 'Pomodoro 25/50/90 menit atau atur sendiri, niat sesi, blokir aplikasi pengganggu, jurnal setelah sesi, otomatis jeda saat rapat. ⌃⌥S dari mana saja.' },
   { icon: CalendarDays, title: 'Rapat', desc: 'Kalender bulanan: tambah dan edit rapat, atur pengingat per acara. Tersimpan ke Kalender macOS, notifikasi tetap muncul walau aplikasi ditutup. ⌃⌥R.' },
@@ -38,14 +39,15 @@ export const notch = [
   { icon: FolderUp, title: 'Shelf', desc: 'Seret file ke notch, seret keluar, atau kirim lewat AirDrop.' },
   { icon: GitBranch, title: 'Git', desc: 'Status repo, pull/push, commit dengan pesan AI, review PR GitHub & Bitbucket.' },
   { icon: Cpu, title: 'Stats', desc: 'Baterai, CPU, memori, dan disk sekilas pandang.' },
-  { icon: LayoutGrid, title: 'Lainnya', desc: 'Notif saat baterai penuh, Mic Mute untuk semua aplikasi (⌃⌥M), kamera cermin, color picker, tetap menyala dengan durasi, notif download, eject USB, dan Belajar Bahasa (Inggris, Spanyol & Jepang, soal TOEFL/JLPT, ngobrol pakai suara dengan Apple Intelligence atau Claude).' },
+  { icon: MoonStar, title: 'Ibadah', desc: 'Jadwal sholat sesuai lokasi dengan pengingat per waktu, baca Al-Qur\'an, Ramadan, dan Zakat.' },
+  { icon: LayoutGrid, title: 'Lainnya', desc: 'Notif baterai penuh, pemilih warna, tetap menyala, notif download, lepas USB, Belajar Bahasa, Todo, Gabut (ular, kartu, X-O, catur, hangman, sudoku), Self-care, dan pembaruan aplikasi.' },
 ]
 
 export const menubar = [
   { icon: BatteryCharging, title: 'Baterai', desc: 'Semua kontrol pengisian dan grafik riwayat.' },
-  { icon: Cpu, title: 'Sistem', desc: 'Memori, CPU, disk, dan proses terberat yang bisa ditutup.' },
-  { icon: Trash2, title: 'Cleaner', desc: 'Bersihkan cache, log, DerivedData, simulator, file besar, dan sisa aplikasi.' },
-  { icon: Wrench, title: 'Tools', desc: 'Cegah sleep, file tersembunyi, ikon desktop, dark mode, screenshot area.' },
+  { icon: Cpu, title: 'Sistem', desc: 'Memori, CPU, disk, jaringan, dan proses terberat yang bisa ditutup.' },
+  { icon: Trash2, title: 'Cleaner', desc: 'Bersihkan cache, log, DerivedData, simulator, file besar, dan uninstall aplikasi.' },
+  { icon: Wrench, title: 'Tools', desc: 'Tetap menyala, file tersembunyi, ikon desktop, warna aksen, pilih fitur yang aktif, dan aksi cepat.' },
 ]
 
 export const faq = [

@@ -73,7 +73,7 @@ export function PanelTour() {
       <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-sky-950/60 via-zinc-900 to-violet-950/50 p-4 sm:p-8">
         <PanelPreview tab={tab} setTab={setTab} />
       </div>
-      <List items={menubar} active={tab} onPick={setTab} color="text-sky-400" />
+      <List items={menubar} active={tab} onPick={setTab} color="text-emerald-400" />
     </div>
   )
 }
