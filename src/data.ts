@@ -4,7 +4,7 @@ import {
 } from 'lucide-react'
 
 export const REPO = 'https://github.com/lshinkuro/poni'
-export const VERSION = '0.6.6' // fallback until GitHub Releases loads
+export const VERSION = '0.18.2' // fallback until GitHub Releases loads
 // Fixed asset name, so this always points at the newest release.
 // Fallback until GitHub Releases loads; the live link comes from useLatest().
 export const DMG = `${REPO}/releases/latest`
